@@ -1,0 +1,235 @@
+/* =========================================
+   Good Pals & Co. — shared site styles
+   ========================================= */
+
+:root {
+  --ink: #1E1E1E;
+  --tomato: #E64B3B;
+  --citron: #D9E74A;
+  --lilac: #C9B6F4;
+  --lilac-deep: #9B6BE8;   /* marker purple, matches the logo's & and sparks */
+  --cream: #F7F3E8;
+
+  /* "hand-drawn" wobbly corners */
+  --wobble: 255px 18px 225px 18px / 18px 225px 18px 255px;
+  --wobble-soft: 28px 14px 32px 16px / 16px 30px 14px 28px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  color: var(--ink);
+  font-family: 'Baloo 2', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 16px;
+  text-align: center;
+
+  /* Cream background with a scattered doodle print */
+  background-color: var(--cream);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><g opacity='0.4'><g transform='translate(48 56) rotate(-18)' fill='%23E64B3B'><ellipse cx='0' cy='9' rx='10' ry='8'/><ellipse cx='-10' cy='-4' rx='3.8' ry='5'/><ellipse cx='-3.5' cy='-10' rx='3.8' ry='5'/><ellipse cx='4' cy='-10' rx='3.8' ry='5'/><ellipse cx='11' cy='-4' rx='3.8' ry='5'/></g><path transform='translate(196 38) rotate(12)' d='M14 26 C6 20 0 14 0 8 C0 3 4 0 8 0 C11 0 13 2 14 5 C15 2 17 0 20 0 C24 0 28 3 28 8 C28 14 22 20 14 26 Z' fill='none' stroke='%239B6BE8' stroke-width='3.5' stroke-linejoin='round'/><g transform='translate(232 196)' stroke='%239B6BE8' stroke-width='4' stroke-linecap='round'><path d='M0 14 L4 0'/><path d='M8 20 L19 10'/><path d='M12 31 L26 28'/></g><path transform='translate(40 210)' d='M0 10 q8 -12 16 0 t16 0 t16 0 t16 0' fill='none' stroke='%23B5C21E' stroke-width='4' stroke-linecap='round'/><g transform='translate(160 150) rotate(22)' fill='%239B6BE8'><ellipse cx='0' cy='7' rx='7.5' ry='6'/><ellipse cx='-7.5' cy='-3' rx='2.8' ry='3.8'/><ellipse cx='-2.6' cy='-7.5' rx='2.8' ry='3.8'/><ellipse cx='3' cy='-7.5' rx='2.8' ry='3.8'/><ellipse cx='8.2' cy='-3' rx='2.8' ry='3.8'/></g><path transform='translate(110 262) rotate(-10)' d='M9 17 C4 13 0 9 0 5 C0 2 2 0 5 0 C7 0 8 1 9 3 C10 1 11 0 13 0 C16 0 18 2 18 5 C18 9 14 13 9 17 Z' fill='%23E64B3B'/><circle cx='118' cy='40' r='3.5' fill='%23B5C21E'/><circle cx='268' cy='118' r='3' fill='%23E64B3B'/><circle cx='22' cy='132' r='3' fill='%239B6BE8'/></g></svg>");
+  background-size: 300px 300px;
+}
+
+main { max-width: 540px; width: 100%; }
+
+/* ---------- Logo ---------- */
+.logo {
+  display: block;
+  width: min(300px, 75vw);
+  height: auto;
+  margin: 0 auto 8px;
+}
+
+/* Text fallback if logo.png isn't uploaded yet */
+.wordmark {
+  font-weight: 800;
+  font-size: clamp(2.8rem, 10vw, 4.4rem);
+  line-height: 0.95;
+  margin-bottom: 16px;
+}
+.wordmark .amp {
+  font-family: 'Caveat', cursive;
+  color: var(--lilac-deep);
+}
+
+/* ---------- Handwritten note ---------- */
+.note {
+  font-family: 'Caveat', cursive;
+  font-size: 1.7rem;
+  color: var(--tomato);
+  transform: rotate(-3deg);
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* ---------- Headings ---------- */
+h1 {
+  font-weight: 800;
+  font-size: clamp(2.6rem, 9vw, 4rem);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+
+/* Lilac marker swash behind a word */
+.swash {
+  background: linear-gradient(transparent 55%, var(--lilac) 55%, var(--lilac) 90%, transparent 90%);
+  padding: 0 6px;
+}
+
+/* The three marker "spark" lines, like the logo */
+.sparks {
+  display: inline-block;
+  width: 0.62em;
+  height: 0.62em;
+  vertical-align: top;
+  margin-left: 2px;
+  margin-top: -0.12em;
+}
+.sparks path {
+  stroke: var(--lilac-deep);
+  stroke-width: 4.5;
+  stroke-linecap: round;
+  fill: none;
+}
+
+.tagline {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin: 4px auto 30px;
+  max-width: 420px;
+}
+
+/* ---------- Hand-drawn card ---------- */
+.card {
+  background: #fff;
+  border: 3px solid var(--ink);
+  border-radius: var(--wobble-soft);
+  padding: 26px 24px;
+  box-shadow: 7px 7px 0 var(--citron);
+  transform: rotate(-0.8deg);
+}
+
+.card p {
+  font-size: 1.2rem;
+  line-height: 1.45;
+}
+.card p + p { margin-top: 12px; }
+
+/* ---------- Instagram "come say hi" sticker ---------- */
+.say-hi {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.say-hi .scribble {
+  font-family: 'Caveat', cursive;
+  font-size: 1.6rem;
+  transform: rotate(-4deg);
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.say-hi .arrow {
+  width: 38px;
+  height: 30px;
+  transform: translateY(8px);
+}
+.say-hi .arrow path {
+  stroke: var(--ink);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+}
+
+.sticker {
+  display: inline-block;
+  background: var(--lilac);
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 1.15rem;
+  text-decoration: none;
+  padding: 8px 20px;
+  border: 3px solid var(--ink);
+  border-radius: var(--wobble);
+  transform: rotate(3deg);
+  transition: transform 0.15s ease;
+}
+.sticker:hover { transform: rotate(0deg) scale(1.05); }
+
+/* ---------- Buttons / links ---------- */
+.home {
+  display: inline-block;
+  margin-top: 22px;
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration-color: var(--tomato);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* =========================================
+   Kit form — strip Kit's look, use ours
+   ========================================= */
+.formkit-form {
+  max-width: 100% !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  font-family: 'Baloo 2', sans-serif !important;
+}
+
+.formkit-form [data-style="clean"],
+.formkit-form [data-style="minimal"] {
+  padding: 0 !important;
+}
+
+/* Our page already has the headline, so hide Kit's */
+.formkit-form .formkit-header,
+.formkit-form .formkit-subheader {
+  display: none !important;
+}
+
+.formkit-form .formkit-fields {
+  margin: 0 !important;
+}
+
+.formkit-input {
+  font-family: 'Baloo 2', sans-serif !important;
+  font-size: 1.05rem !important;
+  color: var(--ink) !important;
+  background: var(--cream) !important;
+  border: 3px solid var(--ink) !important;
+  border-radius: 14px 22px 16px 24px / 22px 14px 24px 16px !important;
+}
+
+.formkit-submit {
+  font-family: 'Baloo 2', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.1rem !important;
+  background-color: var(--tomato) !important;
+  color: var(--cream) !important;
+  border: 3px solid var(--ink) !important;
+  border-radius: 22px 14px 24px 16px / 14px 22px 16px 24px !important;
+  transition: transform 0.15s ease !important;
+}
+.formkit-submit:hover {
+  transform: rotate(-2deg) scale(1.03) !important;
+}
+.formkit-submit > span {
+  background: transparent !important;
+}
+
+.formkit-guarantee {
+  font-family: 'Caveat', cursive !important;
+  font-size: 1.25rem !important;
+  color: var(--ink) !important;
+}
