@@ -268,10 +268,16 @@ h1 {
   color: var(--cream) !important;
   border: none !important;
   border-radius: 22px 14px 24px 16px / 14px 22px 16px 24px !important;
-  transition: transform 0.15s ease !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
 }
-.formkit-submit:hover {
-  transform: rotate(-2deg) scale(1.03) !important;
+.formkit-submit:hover,
+.formkit-submit:focus-visible {
+  transform: translate(-2px, -2px) scale(1.02) !important;
+  box-shadow: 4px 4px 0 var(--citron) !important;
+}
+.formkit-submit:active {
+  transform: translate(0, 0) scale(1) !important;
+  box-shadow: 1px 1px 0 var(--citron) !important;
 }
 .formkit-submit > span {
   background: transparent !important;
@@ -422,7 +428,7 @@ body.thanks .sticker { background: var(--citron); }
   .note { font-size: 1.8rem; margin-bottom: 2px; }
   .tagline { font-size: 1.05rem; margin: 2px auto 18px; }
   .br-mobile { display: inline; }
-  body.thanks { background-size: cover; background-repeat: no-repeat; background-attachment: scroll; }
+  body.thanks { background-image: url("bg-thanks-mobile.jpg?v=1"); background-size: cover; background-position: center; background-repeat: no-repeat; }
   body.thanks h1 { font-size: 2.4rem; }
   .card { padding: 20px 16px; }
   .formkit-form [data-group="checkboxes"] legend { font-size: 1.15rem !important; margin-bottom: 8px !important; }
