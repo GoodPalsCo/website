@@ -444,3 +444,15 @@ body.thanks .sticker { background: var(--citron); }
   .card { padding: 18px 22px; margin-bottom: 36px; }
   .say-hi { margin-top: 18px; }
 }
+
+/* "You're in, pal" page: lilac checker (desktop and phones) */
+body.thanks.checker,
+body.thanks.checker:is(*) {
+  background-image: url("bg-checker.jpg?v=1");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+@media (max-width: 700px) {
+  body.thanks.checker { background-image: url("bg-checker.jpg?v=1"); background-size: cover; background-position: center; }
+}
