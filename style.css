@@ -242,6 +242,17 @@ h1 {
   opacity: 0.45 !important;
 }
 
+/* Message shown to people who've already subscribed */
+.formkit-form .seva-custom-content {
+  color: var(--ink) !important;
+  mix-blend-mode: normal !important;
+  font-family: 'Baloo 2', sans-serif !important;
+  font-size: 1.25rem !important;
+  line-height: 1.4 !important;
+  padding: 4px 0 !important;
+  text-align: center !important;
+}
+
 .formkit-guarantee {
   font-family: 'Caveat', cursive !important;
   font-size: 1.25rem !important;
