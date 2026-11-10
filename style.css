@@ -117,6 +117,15 @@ h1 {
   fill: none;
 }
 
+/* citron highlighter swipe behind a phrase */
+.swipe {
+  background: linear-gradient(176deg, transparent 46%, var(--citron) 46%, var(--citron) 86%, transparent 86%);
+  padding: 0 1px 0 4px;
+  border-radius: 4px 10px 6px 12px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 /* line break that only appears on phones */
 .br-mobile { display: none; }
 
@@ -181,7 +190,7 @@ h1 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--lilac);
+  background: var(--citron);
   color: var(--ink);
   font-weight: 700;
   font-size: 1.15rem;
