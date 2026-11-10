@@ -32,7 +32,7 @@ body {
 
   /* Ellen's hand-drawn crayon backgrounds */
   background-color: var(--cream);
-  background-image: url("bg-home.jpg?v=3");
+  background-image: url("bg-home.jpg?v=4");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -128,6 +128,7 @@ h1 {
 
 /* line break that only appears on phones */
 .br-mobile { display: none; }
+.nowrap { white-space: nowrap; }
 
 .tagline {
   font-size: 1.25rem;
@@ -153,6 +154,7 @@ h1 {
   line-height: 1.45;
 }
 .card p + p { margin-top: 12px; }
+.card p.small { font-size: 1rem; opacity: 0.85; }
 
 /* ---------- Instagram "come say hi" sticker ---------- */
 .say-hi {
@@ -307,8 +309,8 @@ h1 {
   width: 100% !important;
   display: block !important;
   font-family: 'Baloo 2', sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 1.3rem !important;
+  font-weight: 800 !important;
+  font-size: 1.55rem !important;
   line-height: 1.2 !important;
   color: var(--ink) !important;
   text-align: center !important;
@@ -420,7 +422,19 @@ body.thanks .sticker { background: var(--citron); }
   .note { font-size: 1.8rem; margin-bottom: 2px; }
   .tagline { font-size: 1.05rem; margin: 2px auto 18px; }
   .br-mobile { display: inline; }
+  body.thanks { background-size: cover; background-repeat: no-repeat; background-attachment: scroll; }
+  body.thanks h1 { font-size: 2.4rem; }
   .card { padding: 20px 16px; }
   .formkit-form [data-group="checkboxes"] legend { font-size: 1.15rem !important; margin-bottom: 8px !important; }
   .formkit-form [data-group="checkbox"] label { font-size: 0.92rem !important; padding: 5px 12px !important; }
+}
+
+/* ---------- Desktop / laptop: get the signup on screen without scrolling ---------- */
+@media (min-width: 701px) {
+  body { padding: 24px 16px 28px; }
+  .logo { width: 210px; margin-bottom: 0; }
+  .note { margin-bottom: 0; }
+  .tagline { margin: 2px auto 16px; }
+  .card { padding: 18px 22px; margin-bottom: 36px; }
+  .say-hi { margin-top: 18px; }
 }
