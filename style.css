@@ -32,7 +32,7 @@ body {
 
   /* Ellen's hand-drawn crayon backgrounds */
   background-color: var(--cream);
-  background-image: url("bg-home.jpg");
+  background-image: url("bg-home.jpg?v=3");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -40,12 +40,12 @@ body {
 
 /* Phones: a version with doodles spread through, so the edges aren't cropped away */
 @media (max-width: 700px) {
-  body { background-image: url("bg-home-mobile.jpg"); }
+  body { background-image: url("bg-home-mobile.jpg?v=3"); }
 }
 
 /* Thank-you page: lilac crayon wash */
 body.thanks {
-  background-image: url("bg-thanks.jpg");
+  background-image: url("bg-thanks.jpg?v=3");
   background-position: center bottom;
 }
 
@@ -284,7 +284,7 @@ h1 {
   font-family: 'Baloo 2', sans-serif !important;
   color: var(--ink) !important;
   text-align: center !important;
-  margin: 6px 0 14px !important;
+  margin: 2px 0 4px !important;
 }
 .formkit-form [data-group="checkboxes"] legend {
   width: 100% !important;
@@ -298,7 +298,8 @@ h1 {
   margin: 0 0 12px !important;
 }
 .formkit-form [data-group="checkbox"] {
-  margin: 0 !important;
+  display: inline-block !important;
+  margin: 4px 3px !important;
 }
 .formkit-form [data-group="checkbox"] label {
   display: inline-block !important;
@@ -351,3 +352,14 @@ h1 {
 
 /* Thank-you page sits on lilac, so the Instagram sticker switches to citron */
 body.thanks .sticker { background: var(--citron); }
+
+/* ---------- Phones: calmer top, form sooner ---------- */
+@media (max-width: 700px) {
+  body { padding: 20px 16px 40px; align-items: flex-start; }
+  .logo { width: min(180px, 50vw); margin-bottom: 0; }
+  .note { font-size: 1.8rem; margin-bottom: 2px; }
+  .tagline { font-size: 1.05rem; margin: 2px auto 18px; }
+  .card { padding: 20px 16px; }
+  .formkit-form [data-group="checkboxes"] legend { font-size: 1.15rem !important; margin-bottom: 8px !important; }
+  .formkit-form [data-group="checkbox"] label { font-size: 0.92rem !important; padding: 5px 12px !important; }
+}
