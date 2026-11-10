@@ -120,7 +120,7 @@ h1 {
 /* citron highlighter swipe behind a phrase */
 .swipe {
   background: linear-gradient(176deg, transparent 46%, var(--citron) 46%, var(--citron) 86%, transparent 86%);
-  padding: 0 1px 0 4px;
+  padding: 0 1px 0 2px;
   border-radius: 4px 10px 6px 12px;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
@@ -440,7 +440,8 @@ body.thanks .sticker { background: var(--citron); }
   body { padding: 24px 16px 28px; }
   .logo { width: 210px; margin-bottom: 0; }
   .note { margin-bottom: 0; }
-  .tagline { margin: 2px auto 16px; }
+  .note { font-size: 1.7rem; transform: rotate(-4deg); margin-bottom: 10px; }
+  .tagline { font-size: 1.6rem; font-weight: 700; line-height: 1.25; max-width: 640px; margin: 0 auto 20px; }
   .card { padding: 18px 22px; margin-bottom: 36px; }
   .say-hi { margin-top: 18px; }
 }
