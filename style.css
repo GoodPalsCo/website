@@ -368,6 +368,20 @@ h1 {
   box-shadow: 2px 2px 0 var(--ink) !important;
 }
 
+/* "Check your inbox" message right after someone signs up */
+.formkit-form .formkit-alert-success {
+  background: var(--lilac) !important;
+  border: 1.5px solid var(--ink) !important;
+  border-radius: 18px 12px 20px 14px / 12px 20px 14px 18px !important;
+  color: var(--ink) !important;
+  font-family: var(--ui) !important;
+  font-size: 1.05rem !important;
+  font-weight: 700 !important;
+  line-height: 1.4 !important;
+  padding: 14px 16px !important;
+  margin: 8px 0 !important;
+}
+
 /* Message shown to people who've already subscribed */
 .formkit-form .seva-custom-content {
   color: var(--ink) !important;
