@@ -168,7 +168,9 @@ h1 {
 }
 
 .sticker {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   background: var(--lilac);
   color: var(--ink);
   font-weight: 700;
@@ -181,6 +183,12 @@ h1 {
   transition: transform 0.15s ease;
 }
 .sticker:hover { transform: rotate(0deg) scale(1.05); }
+.sticker .ig {
+  width: 22px;
+  height: 22px;
+  display: block;
+  flex: none;
+}
 
 /* ---------- Buttons / links ---------- */
 .home {
