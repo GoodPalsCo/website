@@ -10,6 +10,9 @@
   --lilac-deep: #9B6BE8;   /* marker purple, matches the logo's & and sparks */
   --cream: #F7F3E8;
 
+  /* fonts: Baloo 2 = display, Nunito = forms/UI, Caveat = handwritten accents */
+  --ui: 'Nunito', sans-serif;
+
   /* "hand-drawn" wobbly corners */
   --wobble: 255px 18px 225px 18px / 18px 225px 18px 255px;
   --wobble-soft: 28px 14px 32px 16px / 16px 30px 14px 28px;
@@ -27,10 +30,23 @@ body {
   padding: 48px 16px;
   text-align: center;
 
-  /* Cream background with a scattered doodle print */
+  /* Ellen's hand-drawn crayon backgrounds */
   background-color: var(--cream);
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='300' height='300' viewBox='0 0 300 300'><g opacity='0.4'><g transform='translate(48 56) rotate(-18)' fill='%23E64B3B'><ellipse cx='0' cy='9' rx='10' ry='8'/><ellipse cx='-10' cy='-4' rx='3.8' ry='5'/><ellipse cx='-3.5' cy='-10' rx='3.8' ry='5'/><ellipse cx='4' cy='-10' rx='3.8' ry='5'/><ellipse cx='11' cy='-4' rx='3.8' ry='5'/></g><path transform='translate(196 38) rotate(12)' d='M14 26 C6 20 0 14 0 8 C0 3 4 0 8 0 C11 0 13 2 14 5 C15 2 17 0 20 0 C24 0 28 3 28 8 C28 14 22 20 14 26 Z' fill='none' stroke='%239B6BE8' stroke-width='3.5' stroke-linejoin='round'/><g transform='translate(232 196)' stroke='%239B6BE8' stroke-width='4' stroke-linecap='round'><path d='M0 14 L4 0'/><path d='M8 20 L19 10'/><path d='M12 31 L26 28'/></g><path transform='translate(40 210)' d='M0 10 q8 -12 16 0 t16 0 t16 0 t16 0' fill='none' stroke='%23B5C21E' stroke-width='4' stroke-linecap='round'/><g transform='translate(160 150) rotate(22)' fill='%239B6BE8'><ellipse cx='0' cy='7' rx='7.5' ry='6'/><ellipse cx='-7.5' cy='-3' rx='2.8' ry='3.8'/><ellipse cx='-2.6' cy='-7.5' rx='2.8' ry='3.8'/><ellipse cx='3' cy='-7.5' rx='2.8' ry='3.8'/><ellipse cx='8.2' cy='-3' rx='2.8' ry='3.8'/></g><path transform='translate(110 262) rotate(-10)' d='M9 17 C4 13 0 9 0 5 C0 2 2 0 5 0 C7 0 8 1 9 3 C10 1 11 0 13 0 C16 0 18 2 18 5 C18 9 14 13 9 17 Z' fill='%23E64B3B'/><circle cx='118' cy='40' r='3.5' fill='%23B5C21E'/><circle cx='268' cy='118' r='3' fill='%23E64B3B'/><circle cx='22' cy='132' r='3' fill='%239B6BE8'/></g></svg>");
-  background-size: 300px 300px;
+  background-image: url("bg-home.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Phones: a version with doodles spread through, so the edges aren't cropped away */
+@media (max-width: 700px) {
+  body { background-image: url("bg-home-mobile.jpg"); }
+}
+
+/* Thank-you page: lilac crayon wash */
+body.thanks {
+  background-image: url("bg-thanks.jpg");
+  background-position: center bottom;
 }
 
 main { max-width: 540px; width: 100%; }
@@ -205,7 +221,8 @@ h1 {
 }
 
 .formkit-input {
-  font-family: 'Baloo 2', sans-serif !important;
+  font-family: var(--ui) !important;
+  font-weight: 500 !important;
   font-size: 1.05rem !important;
   color: var(--ink) !important;
   background: var(--cream) !important;
@@ -214,8 +231,9 @@ h1 {
 }
 
 .formkit-submit {
-  font-family: 'Baloo 2', sans-serif !important;
+  font-family: var(--ui) !important;
   font-weight: 800 !important;
+  letter-spacing: 0.01em !important;
   font-size: 1.1rem !important;
   background-color: var(--tomato) !important;
   color: var(--cream) !important;
@@ -242,45 +260,61 @@ h1 {
   opacity: 0.45 !important;
 }
 
-/* "I'm here as a…" checkboxes */
+/* "What best describes you?" — tappable sticker-style pills */
 .formkit-form [data-group="checkboxes"] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 10px !important;
   font-family: 'Baloo 2', sans-serif !important;
   color: var(--ink) !important;
-  text-align: left !important;
-  margin: 2px 0 10px !important;
+  text-align: center !important;
+  margin: 6px 0 14px !important;
 }
 .formkit-form [data-group="checkboxes"] legend {
+  width: 100% !important;
+  display: block !important;
+  font-family: 'Caveat', cursive !important;
   font-weight: 700 !important;
-  font-size: 1.1rem !important;
-  margin-bottom: 10px !important;
+  font-size: 1.75rem !important;
+  line-height: 1.1 !important;
+  color: var(--ink) !important;
+  text-align: center !important;
+  margin: 0 0 12px !important;
 }
 .formkit-form [data-group="checkbox"] {
-  margin-bottom: 8px !important;
+  margin: 0 !important;
 }
 .formkit-form [data-group="checkbox"] label {
-  font-size: 1.05rem !important;
-  line-height: 1.5 !important;
-  padding-left: 32px !important;
-}
-.formkit-form [data-group="checkbox"] label::before {
-  width: 20px !important;
-  height: 20px !important;
-  top: 2px !important;
-  border: 2.5px solid var(--ink) !important;
-  border-radius: 6px 8px 5px 7px !important;
+  display: inline-block !important;
+  padding: 7px 16px !important;
+  font-family: var(--ui) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
   background: var(--cream) !important;
+  border: 2.5px solid var(--ink) !important;
+  border-radius: 22px 16px 24px 14px / 14px 24px 16px 22px !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease !important;
 }
-.formkit-form [data-group="checkbox"] input[type="checkbox"]:checked + label::before {
-  background: var(--tomato) !important;
-  border-color: var(--ink) !important;
-}
+/* hide Kit's square boxes and ticks */
+.formkit-form [data-group="checkbox"] label::before,
 .formkit-form [data-group="checkbox"] label::after {
-  width: 9px !important;
-  height: 5px !important;
-  left: 6px !important;
-  top: 8px !important;
-  border-left: 2.5px solid var(--cream) !important;
-  border-bottom: 2.5px solid var(--cream) !important;
+  content: none !important;
+  display: none !important;
+}
+/* a little tilt on each, like stickers */
+.formkit-form [data-group="checkbox"]:nth-of-type(odd) label  { transform: rotate(-1.5deg); }
+.formkit-form [data-group="checkbox"]:nth-of-type(even) label { transform: rotate(1.5deg); }
+.formkit-form [data-group="checkbox"] label:hover {
+  transform: rotate(0deg) translateY(-2px) !important;
+}
+/* picked */
+.formkit-form [data-group="checkbox"] input[type="checkbox"]:checked + label {
+  background: var(--lilac) !important;
+  box-shadow: 3px 3px 0 var(--ink) !important;
 }
 
 /* Message shown to people who've already subscribed */
@@ -299,3 +333,6 @@ h1 {
   font-size: 1.25rem !important;
   color: var(--ink) !important;
 }
+
+/* Thank-you page sits on lilac, so the Instagram sticker switches to citron */
+body.thanks .sticker { background: var(--citron); }
