@@ -110,6 +110,8 @@ h1 {
   padding: 26px 24px;
   box-shadow: 7px 7px 0 var(--citron);
   transform: rotate(-0.8deg);
+  position: relative;
+  margin-bottom: 44px; /* room for the small "Built with Kit" badge underneath */
 }
 
 .card p {
@@ -226,6 +228,18 @@ h1 {
 }
 .formkit-submit > span {
   background: transparent !important;
+}
+
+/* Move "Built with Kit" out of the card: small, faded, centred just below it */
+.card [class*="powered-by"][class*="container"] {
+  position: absolute !important;
+  left: 50% !important;
+  bottom: -40px !important;
+  transform: translateX(-50%) rotate(0.8deg) scale(0.6) !important;
+  transform-origin: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  opacity: 0.45 !important;
 }
 
 .formkit-guarantee {
