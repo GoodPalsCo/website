@@ -40,7 +40,12 @@ body {
 
 /* Phones: a version with doodles spread through, so the edges aren't cropped away */
 @media (max-width: 700px) {
-  body { background-image: url("bg-home-mobile.jpg?v=3"); }
+  body {
+    background-image: url("bg-home-mobile.jpg?v=5");
+    background-size: 100% auto;
+    background-repeat: repeat-y;
+    background-position: top center;
+  }
 }
 
 /* Thank-you page: lilac crayon wash */
@@ -299,7 +304,13 @@ h1 {
 }
 .formkit-form [data-group="checkbox"] {
   display: inline-block !important;
+  width: auto !important;
+  flex: 0 0 auto !important;
   margin: 4px 3px !important;
+}
+/* if Kit wraps the options in extra boxes, let the pills flow past them */
+.formkit-form [data-group="checkboxes"] div:not([data-group="checkbox"]) {
+  display: contents !important;
 }
 .formkit-form [data-group="checkbox"] label {
   display: inline-block !important;
@@ -326,6 +337,18 @@ h1 {
 .formkit-form [data-group="checkbox"]:nth-of-type(even) label { transform: rotate(1.5deg); }
 .formkit-form [data-group="checkbox"] label:hover {
   transform: rotate(0deg) translateY(-2px) !important;
+}
+/* hide the real tick box (still works for keyboards and screen readers) */
+.formkit-form [data-group="checkbox"] input[type="checkbox"] {
+  position: absolute !important;
+  opacity: 0 !important;
+  width: 1px !important;
+  height: 1px !important;
+  pointer-events: none !important;
+}
+.formkit-form [data-group="checkbox"] input[type="checkbox"]:focus-visible + label {
+  outline: 2px solid var(--lilac-deep) !important;
+  outline-offset: 2px !important;
 }
 /* picked */
 .formkit-form [data-group="checkbox"] input[type="checkbox"]:checked + label {
