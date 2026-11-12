@@ -432,28 +432,49 @@ h1 {
 
 /* ---------- "Tell us more" (optional, tucked away on the You're in page) ---------- */
 .more {
-  margin: 22px auto 0;
+  margin: 28px auto 0;
   max-width: 540px;
 }
+.more-note {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 1.9rem;
+  line-height: 1;
+  color: var(--tomato);
+  transform: rotate(-3deg);
+  display: block;
+  text-align: center;
+  margin-bottom: 4px;
+}
+.more-note .arrow { width: 34px; height: 26px; display: inline-block; vertical-align: -10px; margin-left: 2px; }
+@media (max-width: 700px) { .more-note { font-size: 1.65rem; } }
+.more-note .arrow path { stroke: var(--tomato); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+.more-note { margin-top: 20px; }
+.more-note:has(+ .more[open]) { display: none; }
+.more-note + .more { margin-top: 4px; }
 .more summary {
   list-style: none;
   cursor: pointer;
   display: inline-block;
   font-family: var(--ui);
-  font-weight: 700;
-  font-size: 1rem;
-  background: #EFE8FC;
-  border: 1.5px solid var(--ink);
-  border-radius: 22px 16px 24px 14px / 14px 24px 16px 22px;
-  padding: 8px 18px;
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
-}
-.more summary::-webkit-details-marker { display: none; }
-.more summary:hover,
-.more[open] summary {
+  font-weight: 800;
+  font-size: 1.05rem;
   background: var(--lilac);
-  box-shadow: 2px 2px 0 var(--ink);
+  border: 2px solid var(--ink);
+  border-radius: 22px 16px 24px 14px / 14px 24px 16px 22px;
+  padding: 10px 20px;
+  box-shadow: 3px 3px 0 var(--ink);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  animation: nudge 0.6s ease-in-out 1.2s 2;
 }
+@keyframes nudge {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2.5deg); }
+  75% { transform: rotate(2.5deg); }
+}
+@media (prefers-reduced-motion: reduce) { .more summary { animation: none; } }
+.more summary::-webkit-details-marker { display: none; }
+.more summary:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
+.more[open] summary { box-shadow: 1px 1px 0 var(--ink); transform: translate(2px, 2px); animation: none; }
 .more-card {
   margin-top: 16px;
   text-align: left;
@@ -542,3 +563,11 @@ body.thanks.checker:is(*) {
 @media (max-width: 700px) {
   body.thanks.checker { background-image: url("bg-checker.jpg?v=1"); background-size: cover; background-position: center; }
 }
+
+/* breathing room between the Tell us more pill and the Instagram note */
+.more + .say-hi { margin-top: 34px !important; }
+
+/* Homepage: only show "Tell us your pal's story" to people who are already subscribed */
+.when-returning { display: none; }
+main:has(.seva-custom-content) .when-returning { display: block; }
+main:has(.seva-custom-content) .more-note.when-returning:has(+ .more[open]) { display: none; }
