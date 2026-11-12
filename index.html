@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Reenie+Beanie&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=18">
+  <link rel="stylesheet" href="style.css?v=19">
 </head>
 <body>
   <main>
@@ -39,5 +39,22 @@
       <a class="sticker" href="https://www.instagram.com/goodpals.ca/" target="_blank" rel="noopener" aria-label="Good Pals on Instagram"><img class="ig" src="instagram-icon.png" alt="" onerror="this.remove()"><span>@goodpals.ca</span></a>
     </div>
   </main>
+
+  <script>
+    /* Move the pop-up note so it sits between the email box and the button */
+    (function () {
+      var tries = 0;
+      var timer = setInterval(function () {
+        var note = document.querySelector('.heads-up');
+        var btn = document.querySelector('.card .formkit-submit');
+        if (note && btn && btn.parentNode) {
+          btn.parentNode.insertBefore(note, btn);
+          note.classList.add('in-form');
+          clearInterval(timer);
+        }
+        if (++tries > 60) clearInterval(timer);
+      }, 200);
+    })();
+  </script>
 </body>
 </html>

@@ -410,6 +410,23 @@ h1 {
   margin: 10px auto 0;
   max-width: 420px;
 }
+.heads-up.in-form {
+  display: block;
+  align-self: stretch;
+  max-width: none;
+  flex: 1 0 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 0.82rem;
+  margin: -6px 0 12px;
+}
+/* keep autofilled email boxes cream instead of the browser's blue */
+.formkit-input:-webkit-autofill,
+.formkit-input:-webkit-autofill:hover,
+.formkit-input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0 40px var(--cream) inset !important;
+  -webkit-text-fill-color: var(--ink) !important;
+}
 /* hide the note for returning subscribers (they only see the "already on the list" message) */
 .card:has(.seva-custom-content) .heads-up { display: none; }
 
