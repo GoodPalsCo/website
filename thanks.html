@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&family=Reenie+Beanie&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body class="thanks checker">
   <main>
@@ -31,6 +31,16 @@
       <p>Add <strong>hello@goodpals.ca</strong> to your contacts so our emails land in your inbox.</p>
     </div>
 
+
+    <!-- Optional "tell us more" form for pets/rescues seeking support (Kit form c3f50ff087) -->
+    <details class="more">
+      <summary>🐾 Pet or rescue seeking support? Tell us more</summary>
+      <div class="card more-card">
+        <p class="more-intro">We'd love to hear a little about your pal.</p>
+        <script async data-uid="c3f50ff087" src="https://good-pals-co.kit.com/c3f50ff087/index.js"></script>
+      </div>
+    </details>
+
     <div class="say-hi">
       <span class="scribble">
         psst… come say hi
@@ -44,5 +54,25 @@
 
     <a class="home" href="./">Back to Good Pals</a>
   </main>
+
+  <script>
+    /* Fill in the subscriber's email (passed along by Kit) so they don't retype it */
+    (function () {
+      var email = '';
+      new URLSearchParams(location.search).forEach(function (v) { if (!email && v.indexOf('@') > 0) email = v; });
+      if (!email) return;
+      var tries = 0;
+      var timer = setInterval(function () {
+        var box = document.querySelector('.more input[name="email_address"]');
+        if (box) {
+          box.value = email;
+          var field = box.closest('.formkit-field');
+          if (field) field.style.display = 'none';
+          clearInterval(timer);
+        }
+        if (++tries > 60) clearInterval(timer);
+      }, 250);
+    })();
+  </script>
 </body>
 </html>
