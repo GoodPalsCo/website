@@ -465,6 +465,17 @@ h1 {
   text-align: center;
   margin-bottom: 10px;
 }
+.more-thanks {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+  background: var(--lilac);
+  border: 1.5px solid var(--ink);
+  border-radius: 18px 12px 20px 14px / 12px 20px 14px 18px;
+  padding: 14px 16px;
+}
+.more-error { font-family: var(--ui); font-size: 0.9rem; color: var(--tomato); text-align: center; margin-top: 8px; }
 /* dropdown to match the email box */
 .formkit-form [data-group="dropdown"] select {
   font-family: var(--ui) !important;
