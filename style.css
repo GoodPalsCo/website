@@ -458,11 +458,11 @@ h1 {
   font-family: var(--ui);
   font-weight: 800;
   font-size: 1.05rem;
-  background: var(--lilac);
+  background: #fff;
   border: 2px solid var(--ink);
   border-radius: 22px 16px 24px 14px / 14px 24px 16px 22px;
   padding: 10px 20px;
-  box-shadow: 3px 3px 0 var(--ink);
+  box-shadow: 4px 4px 0 var(--citron);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
   animation: nudge 0.6s ease-in-out 1.2s 2;
 }
@@ -473,8 +473,8 @@ h1 {
 }
 @media (prefers-reduced-motion: reduce) { .more summary { animation: none; } }
 .more summary::-webkit-details-marker { display: none; }
-.more summary:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 var(--ink); }
-.more[open] summary { box-shadow: 1px 1px 0 var(--ink); transform: translate(2px, 2px); animation: none; }
+.more summary:hover { transform: translate(-1px, -1px); box-shadow: 5px 5px 0 var(--citron); }
+.more[open] summary { box-shadow: 1px 1px 0 var(--citron); transform: translate(2px, 2px); animation: none; }
 .more-card {
   margin-top: 16px;
   text-align: left;
@@ -552,18 +552,6 @@ body.thanks .sticker { background: var(--citron); }
   .say-hi { margin-top: 18px; }
 }
 
-/* "You're in, pal" page: lilac checker (desktop and phones) */
-body.thanks.checker,
-body.thanks.checker:is(*) {
-  background-image: url("bg-checker.jpg?v=1");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-@media (max-width: 700px) {
-  body.thanks.checker { background-image: url("bg-checker.jpg?v=1"); background-size: cover; background-position: center; }
-}
-
 /* breathing room between the Tell us more pill and the Instagram note */
 .more + .say-hi { margin-top: 34px !important; }
 
@@ -571,3 +559,11 @@ body.thanks.checker:is(*) {
 .when-returning { display: none; }
 main:has(.seva-custom-content) .when-returning { display: block; }
 main:has(.seva-custom-content) .more-note.when-returning:has(+ .more[open]) { display: none; }
+
+/* "Almost there" + "You're in": lilac at the top and bottom, cream in the middle (desktop and phones) */
+body.thanks {
+  background-image: url("bg-thanks-mobile.jpg?v=2") !important;
+  background-size: 100% 100% !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
