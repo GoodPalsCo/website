@@ -401,6 +401,18 @@ h1 {
   margin: 8px 0 !important;
 }
 
+/* little note under the form about Kit's recommendations pop-up */
+.heads-up {
+  font-family: var(--ui);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  color: #5a5a5a;
+  margin: 10px auto 0;
+  max-width: 420px;
+}
+/* hide the note for returning subscribers (they only see the "already on the list" message) */
+.card:has(.seva-custom-content) .heads-up { display: none; }
+
 /* Message shown to people who've already subscribed */
 .formkit-form .seva-custom-content {
   color: var(--ink) !important;
