@@ -25,7 +25,6 @@
     <div class="card">
       <!-- Kit signup form (loads live from Kit — edit the form in Kit, not here) -->
       <script async data-uid="5cbea668c0" src="https://good-pals-co.kit.com/5cbea668c0/index.js"></script>
-      <p class="heads-up">A box of other newsletters may pop up – just tap ✕ 💌</p>
     </div>
 
     <p class="more-note when-returning"><span class="note-text">need financial support?</span>
@@ -54,22 +53,6 @@
     </div>
   </main>
 
-  <script>
-    /* Move the pop-up note so it sits between the email box and the button */
-    (function () {
-      var tries = 0;
-      var timer = setInterval(function () {
-        var note = document.querySelector('.heads-up');
-        var btn = document.querySelector('.card:not(.more-card) .formkit-submit');
-        if (note && btn && btn.parentNode) {
-          btn.parentNode.insertBefore(note, btn);
-          note.classList.add('in-form');
-          clearInterval(timer);
-        }
-        if (++tries > 60) clearInterval(timer);
-      }, 200);
-    })();
-  </script>
   <script>
     /* "Tell us more": send the answers to Kit without leaving the page */
     (function () {
