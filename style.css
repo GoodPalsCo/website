@@ -146,7 +146,7 @@ h1 {
   box-shadow: 7px 7px 0 var(--citron);
   transform: rotate(-0.8deg);
   position: relative;
-  margin-bottom: 44px; /* room for the small "Built with Kit" badge underneath */
+  margin-bottom: 8px;
 }
 
 .card p {
@@ -548,7 +548,7 @@ body.thanks .sticker { background: var(--citron); }
   .note { margin-bottom: 0; }
   .note { font-size: 1.7rem; transform: rotate(-4deg); margin-bottom: 10px; }
   .tagline { font-size: 1.6rem; font-weight: 700; line-height: 1.25; max-width: 640px; margin: 0 auto 20px; }
-  .card { padding: 18px 22px; margin-bottom: 36px; }
+  .card { padding: 18px 22px; margin-bottom: 8px; }
   .say-hi { margin-top: 18px; }
 }
 
@@ -567,3 +567,23 @@ body.thanks {
   background-position: center !important;
   background-repeat: no-repeat !important;
 }
+
+/* "for pets & rescues in need": bold Baloo 2 (like the Instagram handle) in Tomato */
+.more-note {
+  font-family: 'Baloo 2', sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.15rem !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.01em;
+  transform: rotate(-2deg) !important;
+  margin-bottom: 8px !important;
+}
+.more-note .arrow { width: 28px !important; height: 22px !important; vertical-align: -6px !important; }
+
+/* the "Tell us your pal's story" pill in lilac so it stands apart from the white card */
+.more summary { background: var(--lilac) !important; box-shadow: 3px 3px 0 var(--ink) !important; }
+.more summary:hover { box-shadow: 4px 4px 0 var(--ink) !important; }
+.more[open] summary { box-shadow: 1px 1px 0 var(--ink) !important; }
+
+/* paid Kit plan: hide the "Built with Kit" badge if Kit still sends it */
+.formkit-powered-by-convertkit-container { display: none !important; }
