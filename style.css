@@ -587,3 +587,19 @@ body.thanks {
 
 /* paid Kit plan: hide the "Built with Kit" badge if Kit still sends it */
 .formkit-powered-by-convertkit-container { display: none !important; }
+
+/* ---------- "Tell us about your pal" page (story.html) ---------- */
+.story-card { text-align: left; }
+.story-intro {
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem !important;
+  text-align: center;
+  margin-bottom: 14px;
+}
+.story-card textarea.formkit-input {
+  resize: vertical;
+  min-height: 110px;
+  line-height: 1.45 !important;
+}
+.story-note { text-align: center; margin-top: 4px; }
