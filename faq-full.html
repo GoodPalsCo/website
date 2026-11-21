@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<!--
+  Good Pals — FULL FAQ (go-live version)
+  Hidden draft: nothing links here yet, and the robots tag below keeps it out of Google.
+
+  BEFORE GOING LIVE:
+  1. Fill in or delete every highlighted "Ellen:" note (search this file for class="todo").
+  2. Remove the <meta name="robots" ...> line.
+  3. Rename this file to faq.html (replacing the current short FAQ),
+     or point the homepage "Read our FAQ" link at faq-full.html.
+
+  Open items flagged on the page:
+  - How the money reaches the pet (vet clinic directly or pet parent)
+  - Platform percentage (0% for the Nala pilot)
+  - Slider tier amounts for Top pal and VIP, and which tiers go on the Pal Wall
+  - Digital option, turnaround time, shipping, and the refund/changes policy
+  - Tax receipt wording (confirm once the business structure is set)
+  - Vetting criteria for causes, whether help is BC-only, and the application route at launch
+  - About page link
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>FAQ · Good Pals &amp; Co.</title>
+  <meta name="description" content="Questions about Good Pals? How it works, where the money goes, joining as an artist and more.">
+  <link rel="icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito:wght@400;600;700;800&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --ink:#1E1E1E; --tomato:#E64B3B; --citron:#D9E74A; --lilac:#C9B6F4;
+      --cream:#F7F3E8; --whisker:#9B6BE8; --link:#7A45D6;
+      --display:'Baloo 2', system-ui, sans-serif;
+      --ui:'Nunito', system-ui, sans-serif;
+      --hand:'Reenie Beanie', cursive;
+      --wobble:255px 18px 225px 18px / 18px 225px 18px 255px;
+      --wobble-sm:30px 8px 26px 8px / 8px 26px 8px 30px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--ink); font-family:var(--ui); font-size:17px; line-height:1.6;
+      background:var(--cream) url("bg-home.jpg") center top / cover fixed;
+      min-height:100vh; padding:28px 16px 60px;
+    }
+    a{color:var(--link); font-weight:700; text-underline-offset:3px}
+    a:hover{color:var(--tomato)}
+
+    /* Header */
+    .top{max-width:760px; margin:0 auto 18px; text-align:center}
+    .logo img{width:150px; height:auto; display:inline-block}
+
+    /* Card */
+    .card{
+      position:relative; max-width:760px; margin:0 auto; background:#fff;
+      border:3px solid var(--ink); border-radius:28px 14px 32px 16px / 16px 30px 14px 28px;
+      box-shadow:9px 10px 0 var(--citron);
+      padding:44px 52px 40px;
+    }
+
+    .note{
+      font-family:var(--hand); color:var(--tomato); font-size:34px; line-height:1;
+      display:inline-block; transform:rotate(-4deg); margin:0 0 4px;
+    }
+    h1{
+      font-family:var(--display); font-weight:800; font-size:clamp(40px,7vw,58px);
+      line-height:1.05; margin:0 0 10px; letter-spacing:-.5px;
+    }
+    .swash{position:relative; display:inline-block; z-index:0}
+    .swash::before{
+      content:""; position:absolute; z-index:-1; left:-6px; right:-8px; bottom:4px; height:42%;
+      background:var(--lilac); border-radius:var(--wobble-sm); transform:rotate(-1.5deg); opacity:.9;
+    }
+    .whiskers{display:inline-block; width:.62em; height:.62em; vertical-align:top; margin-left:4px}
+    .intro{font-size:18px; margin:0 0 22px; max-width:560px}
+
+    /* Jump pills */
+    .jump{display:flex; flex-wrap:wrap; gap:10px; margin:0 0 30px; padding:0; list-style:none}
+    .jump a{
+      display:inline-block; text-decoration:none; color:var(--ink); font-weight:700; font-size:15px;
+      background:#EFE8FC; border:1.5px solid var(--ink); border-radius:var(--wobble-sm);
+      padding:6px 14px; transition:transform .15s, box-shadow .15s, background .15s;
+    }
+    .jump li:nth-child(odd) a{transform:rotate(-1.5deg)}
+    .jump li:nth-child(even) a{transform:rotate(1.2deg)}
+    .jump a:hover{background:var(--lilac); transform:translateY(-2px); box-shadow:3px 3px 0 var(--citron)}
+
+    /* Sections */
+    section{margin:0 0 30px; scroll-margin-top:20px}
+    h2{
+      font-family:var(--display); font-weight:700; font-size:27px; margin:0 0 4px;
+      display:inline-block; position:relative; z-index:0; padding:0 4px;
+    }
+    h2::before{
+      content:""; position:absolute; z-index:-1; left:-4px; right:-6px; bottom:5px; height:45%;
+      background:var(--citron); border-radius:var(--wobble-sm); transform:rotate(-1deg);
+    }
+
+    /* Accordion */
+    details{border-bottom:2px dashed rgba(30,30,30,.28)}
+    details:last-of-type{border-bottom:none}
+    summary{
+      list-style:none; cursor:pointer; position:relative;
+      font-family:var(--display); font-weight:600; font-size:20px; line-height:1.3;
+      padding:16px 44px 16px 0;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary::after{
+      content:"+"; position:absolute; right:6px; top:50%; transform:translateY(-52%);
+      font-family:var(--display); font-weight:800; font-size:30px; color:var(--tomato); line-height:1;
+    }
+    details[open] summary::after{content:"–"}
+    summary:hover{color:var(--tomato)}
+    summary:focus-visible{outline:2px dashed var(--whisker); outline-offset:4px; border-radius:6px}
+    .answer{padding:0 8px 18px 0}
+    .answer p{margin:0 0 10px}
+    .answer p:last-child{margin-bottom:0}
+    .answer ol, .answer ul{margin:4px 0 10px; padding-left:24px}
+    .answer li{margin:0 0 4px}
+    .answer li::marker{color:var(--tomato); font-weight:800}
+    .tier{font-weight:800}
+
+    /* Draft notes for Ellen: remove before going live */
+    .todo{
+      display:block; margin:10px 0 0; padding:8px 12px; font-size:14px; line-height:1.45;
+      background:#FFF4D6; border:1.5px dashed var(--tomato); border-radius:10px; color:#7a2a20;
+    }
+    .todo::before{content:"✏️ Ellen: "; font-weight:800}
+
+    /* Bottom */
+    .still{
+      text-align:center; margin:34px 0 0; padding-top:26px; border-top:2px dashed rgba(30,30,30,.28);
+    }
+    .still h3{font-family:var(--display); font-weight:700; font-size:26px; margin:0 0 4px}
+    .still p{margin:0 0 16px}
+    .btn{
+      display:inline-block; font-family:var(--ui); font-weight:800; font-size:17px; text-decoration:none;
+      background:var(--tomato); color:var(--cream); border:2px solid var(--ink); border-radius:var(--wobble-sm);
+      padding:11px 26px; transition:transform .15s, box-shadow .15s;
+    }
+    .btn:hover{color:var(--cream); transform:translateY(-2px); box-shadow:4px 4px 0 var(--citron)}
+
+    .insta{display:flex; align-items:center; justify-content:center; gap:10px; margin:30px 0 0; flex-wrap:wrap}
+    .insta .hand{font-family:var(--hand); font-size:30px; color:var(--ink); transform:rotate(-3deg)}
+    .sticker{
+      display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:var(--ink);
+      background:var(--citron); border:2px solid var(--ink); border-radius:var(--wobble-sm);
+      padding:6px 14px; transform:rotate(3deg); font-weight:800; transition:transform .15s;
+    }
+    .sticker img{width:22px; height:22px}
+    .sticker:hover{color:var(--ink); transform:rotate(0deg) translateY(-2px)}
+    .home-link{text-align:center; margin:22px 0 0; font-size:15px}
+
+    @media (max-width:700px){
+      body{background-image:url("bg-home-mobile.jpg"); background-attachment:scroll; padding:20px 12px 44px}
+      .logo img{width:120px}
+      .card{padding:30px 22px 30px; box-shadow:6px 7px 0 var(--citron)}
+      .note{font-size:30px}
+      summary{font-size:18px; padding:14px 38px 14px 0}
+      .intro{font-size:17px}
+      h2{font-size:24px}
+    }
+    @media (prefers-reduced-motion:reduce){
+      html{scroll-behavior:auto}
+      *{transition:none !important}
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top">
+    <a class="logo" href="index.html" aria-label="Good Pals &amp; Co. home"><img src="logo.png" alt="Good Pals &amp; Co."></a>
+  </header>
+
+  <main class="card">
+    <p class="note">Sniffing around? Love that.</p>
+    <h1>Questions, <span class="swash">pal</span><svg class="whiskers" viewBox="0 0 40 40" aria-hidden="true"><g stroke="#9B6BE8" stroke-width="4.5" stroke-linecap="round" fill="none"><path d="M6 20 Q8 12 10 4"/><path d="M17 23 Q22 15 28 8"/><path d="M22 32 Q30 28 37 24"/></g></svg></h1>
+    <p class="intro">Everything you might be wondering about Good Pals, all in one place. Can't find what you're looking for? Just ask.</p>
+
+    <nav aria-label="FAQ sections">
+      <ul class="jump">
+        <li><a href="#basics">The basics</a></li>
+        <li><a href="#art">Getting your art</a></li>
+        <li><a href="#pets">Pets &amp; causes</a></li>
+        <li><a href="#artists">For artists</a></li>
+        <li><a href="#partners">Businesses</a></li>
+        <li><a href="#else">Everything else</a></li>
+      </ul>
+    </nav>
+
+    <!-- ============ THE BASICS ============ -->
+    <section id="basics">
+      <h2>The basics</h2>
+
+      <details>
+        <summary>What is Good Pals?</summary>
+        <div class="answer">
+          <p>Good Pals is people teaming up, with artists making, pals buying, and pets benefiting.</p>
+          <p>You choose a piece of custom pet art, chip in what feels right, and that money goes toward a pet who needs help with their vet bills.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Who counts as a pal?</summary>
+        <div class="answer">
+          <p>Everyone! Artists, pet parents, art lovers, people hunting for a one-of-a-kind gift, and anyone who just likes the idea. You don't need an art degree, and you don't even need a pet.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How does it work?</summary>
+        <div class="answer">
+          <ol>
+            <li>Pick an artist and a style you love.</li>
+            <li>Send us a photo of your pet (or someone else's, if it's a gift).</li>
+            <li>Choose your amount on the slider, anywhere from $20 to $100.</li>
+            <li>The artist creates your piece and it's delivered to you.</li>
+            <li>Your money goes toward a pet's care. Everyone wins, especially the pet.</li>
+          </ol>
+        </div>
+      </details>
+
+      <details>
+        <summary>Where does my money go?</summary>
+        <div class="answer">
+          <p>Straight toward the pet's care. A small percentage keeps the site running, and we'll always be upfront about the split.</p>
+          <span class="todo">Is the money paid directly to the vet clinic or to the pet parent? Add the platform percentage once it's decided (0% for the Nala pilot).</span>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ GETTING YOUR ART ============ -->
+    <section id="art">
+      <h2>Getting your art</h2>
+
+      <details>
+        <summary>How much does it cost?</summary>
+        <div class="answer">
+          <p>You choose, anywhere from $20 to $100. $20 covers about an hour of an artist's paint time. As you slide, you'll see what each level includes:</p>
+          <ul>
+            <li><span class="tier">Pal</span>, from $20</li>
+            <li><span class="tier">Top pal</span>, from $__</li>
+            <li><span class="tier">VIP (Very Important Pal)</span>, from $__ up to $100</li>
+          </ul>
+          <span class="todo">Fill in the Top pal and VIP starting amounts and what each level gets you.</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>What's the Pal Wall?</summary>
+        <div class="answer">
+          <p>It's our thank-you wall for pals at the higher levels. You can go up under your own name, your pet's name, or as a gift in someone else's name. Picture a whole wall of pets who helped another pet out.</p>
+          <span class="todo">Which levels get a spot on the wall?</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>What kind of art can I get?</summary>
+        <div class="answer">
+          <p>It depends on the artist: mini portraits, painted tiles and more, with new styles as more artists join.</p>
+          <span class="todo">Mention a digital option here if you're offering one at launch.</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I give it as a gift?</summary>
+        <div class="answer">
+          <p>Absolutely. Just send us a photo of their pet, and you can add them to the Pal Wall too. It's the perfect gift for the person who has everything (except a portrait of their dog).</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What kind of photo should I send?</summary>
+        <div class="answer">
+          <p>The clearer the better: soft natural light, eyes in focus, and your pet's face filling most of the frame. A couple of extra photos help the artist get their markings and personality just right. Phone pics are perfect, no photoshoot needed.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How long until I get my piece?</summary>
+        <div class="answer">
+          <p>Every piece is made by hand, so timing depends on the artist and the style. You'll get an estimate when you order.</p>
+          <span class="todo">Add a typical turnaround time if you have one.</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Do you ship?</summary>
+        <div class="answer">
+          <p>We're based in British Columbia, Canada.</p>
+          <span class="todo">Where do you ship, what does it cost, and is local pickup or digital delivery an option?</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>What if something's not right with my piece?</summary>
+        <div class="answer">
+          <p>Email us at <a href="mailto:hello@goodpals.ca">hello@goodpals.ca</a> and we'll sort it out together.</p>
+          <span class="todo">Add your policy on changes and refunds for custom pieces, and on refunds of the cause amount.</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Will I get a tax receipt?</summary>
+        <div class="answer">
+          <p>Good Pals isn't a registered charity, so we can't issue tax receipts. What you do get is a one-of-a-kind piece of art and the warm fuzzies of helping a pet.</p>
+          <span class="todo">Confirm this wording once the business structure is set.</span>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ PETS & CAUSES ============ -->
+    <section id="pets">
+      <h2>Pets &amp; causes</h2>
+
+      <details>
+        <summary>Which pets do you help?</summary>
+        <div class="answer">
+          <p>Our very first pal is Nala, a gentle 6-year-old cat and neighbourhood favourite who's going through treatment right now. As we grow, we'll be adding more pets and rescues.</p>
+          <span class="todo">Optional: link the "Meet Nala" Instagram post here once it's up.</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Is Good Pals pet insurance?</summary>
+        <div class="answer">
+          <p>Nope, and it's not meant to replace it. Good Pals is for the sudden, rare things that aren't covered, even when a pet is insured.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>Will it cover the whole vet bill?</summary>
+        <div class="answer">
+          <p>The goal is to make a big dent in it, so pet parents aren't stuck choosing between debt, rehoming or worse.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How do you choose which pets to help?</summary>
+        <div class="answer">
+          <p>Every cause goes through a vetting process before it's added, so pals always know who they're helping.</p>
+          <span class="todo">Add the criteria once they're set (e.g. vet confirmation, estimate or invoice, what isn't covered by insurance). Is help limited to BC?</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I ask for help for my pet or rescue?</summary>
+        <div class="answer">
+          <p>Yes! <a href="index.html">Sign up for our newsletter</a> and pick "Financial support for pet or rescue." We'll email you a link to tell us all about your pal.</p>
+          <span class="todo">Update this if there's a proper application form at launch.</span>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ FOR ARTISTS ============ -->
+    <section id="artists">
+      <h2>For artists</h2>
+
+      <details>
+        <summary>I'm an artist. How do I join?</summary>
+        <div class="answer">
+          <p>We'd love to create with you! <a href="index.html">Sign up</a> and pick "Artist," or email <a href="mailto:hello@goodpals.ca">hello@goodpals.ca</a> with a link to your work.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>What do artists get out of it?</summary>
+        <div class="answer">
+          <p>To start, artists give their time to create pieces for the cause. In return, you get credit on every piece, tags and shout-outs on our channels, and your work in front of a whole community of people who love pets and art.</p>
+          <p>Down the road, there'll be a marketplace where you can sell your own work, with a percentage going straight to the cause.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ BUSINESSES ============ -->
+    <section id="partners">
+      <h2>Businesses &amp; partners</h2>
+
+      <details>
+        <summary>Can my business partner with Good Pals?</summary>
+        <div class="answer">
+          <p>We'd love that. We're building partnerships with vets, rescues and pet-loving businesses, plus sponsorships. Pick "Business or partner" when you <a href="index.html">sign up</a>, or email <a href="mailto:hello@goodpals.ca">hello@goodpals.ca</a>.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ EVERYTHING ELSE ============ -->
+    <section id="else">
+      <h2>Everything else</h2>
+
+      <details>
+        <summary>Who's behind Good Pals?</summary>
+        <div class="answer">
+          <p>Good Pals started with Ellen, an artist in BC who works in film and has loved animals her whole life. With film schedules always changing, regular volunteering was tough, so she set out to make helping easier for everyone. Nala is her cat.</p>
+          <span class="todo">Link the About page here once it's live (or swap this answer for a shorter one that points there).</span>
+        </div>
+      </details>
+
+      <details>
+        <summary>Where are you based?</summary>
+        <div class="answer">
+          <p>British Columbia, Canada.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>How can I help without buying anything?</summary>
+        <div class="answer">
+          <p>Follow us on Instagram <a href="https://instagram.com/goodpals.ca" target="_blank" rel="noopener">@goodpals.ca</a>, share a post, <a href="index.html">sign up for the newsletter</a>, or tell an artist friend about us. Every share helps a pet get seen.</p>
+        </div>
+      </details>
+
+      <details>
+        <summary>I have another question</summary>
+        <div class="answer">
+          <p>Email <a href="mailto:hello@goodpals.ca">hello@goodpals.ca</a>. A real human will answer (with a pet supervising).</p>
+        </div>
+      </details>
+    </section>
+
+    <div class="still">
+      <h3>Still curious?</h3>
+      <p>Hit us up anytime.</p>
+      <a class="btn" href="mailto:hello@goodpals.ca">Email us</a>
+
+      <div class="insta">
+        <span class="hand">pspsps… come say hi</span>
+        <a class="sticker" href="https://instagram.com/goodpals.ca" target="_blank" rel="noopener">
+          <img src="instagram-icon.png" alt="">@goodpals.ca
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <p class="home-link"><a href="index.html">← Back home</a></p>
+
+</body>
+</html>
